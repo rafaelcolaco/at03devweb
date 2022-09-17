@@ -1,7 +1,7 @@
 function cadastroFanclub(){
     var Nome = document.getElementById("Nome");
     var Sobrenome = document.getElementById("Sobrenome");
-    var telefone = document.getElementById("telefone    ");
+    var telefone = document.getElementById("telefone");
     var email = document.getElementById("email");
     var date = document.getElementById("date");
     var sexo = document.getElementByName("sexo");
@@ -9,6 +9,11 @@ function cadastroFanclub(){
     var redesociais = document.getElementById("redesociais");
 
     var dados = JSON.parse(localStorage.getItem("dados"));
+
+    if(dados == null){
+        localStorage.setItem("dados", "[]");
+        dados = [];
+    }
 
     var auxRegistro = {
         Nome: Nome.value,
